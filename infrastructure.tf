@@ -57,7 +57,7 @@ resource "aws_db_instance" "default" {
   username = "mlabouardy"
   password = "12345678"
   multi_az = false
-  security_group_names = "${aws_security_group.dbsg.name}"
+  security_group_names = ["${aws_security_group.dbsg.name}"]
 }
 
 resource "aws_key_pair" "default"{
@@ -67,7 +67,7 @@ resource "aws_key_pair" "default"{
 }
 
 resource "aws_instance" "default"{
-  ami="ami-"
+  ami="ami-4fffc834"
   instance_type="t2.micro"
   key_name="${aws_key_pair.default.id}"
   security_groups = ["${aws_security_group.appsg.name}"]
