@@ -34,7 +34,7 @@ resource "aws_security_group" "dbsg"{
     from_port = 3306
     to_port = 3306
     protocol = "tcp"
-    security_groups  = ["${aws.security_group.appsg.name}"]
+    security_groups  = ["${aws_security_group.appsg.name}"]
   }
 
   egress {
