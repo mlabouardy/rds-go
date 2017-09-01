@@ -1,0 +1,8 @@
+CREATE DATABASE `mydb`;
+
+USE mydb;
+
+CREATE TABLE movies(
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(50)
+);
